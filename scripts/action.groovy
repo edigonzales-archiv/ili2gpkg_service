@@ -43,6 +43,8 @@ if (ServletFileUpload.isMultipartContent(request)) {
             String targetFileName = fileName
             File targetFile = new File(tmpDir.toString() + File.separator + targetFileName)
 
+            // falls hier exception -> exit-funktion aufrufen mit bisschen html...
+
             FileUtils.copyInputStreamToFile(fileContent, targetFile)
             logger.info "Uploaded file: " + targetFile.toString()
             logger.info "Uploaded file size [KB]: " + (int) (targetFile.length() / 1024)
