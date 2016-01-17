@@ -61,6 +61,10 @@ def handle() {
     logger.info "AAAAAAAAA"
 }
 
+def exitOnError() {
+    // do something...
+}
+
 
 println ""
 println "Hallo."
