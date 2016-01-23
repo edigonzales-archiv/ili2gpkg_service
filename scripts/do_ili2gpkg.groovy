@@ -34,7 +34,7 @@ logger.info ("Starts at: " + new Date())
 if (ServletFileUpload.isMultipartContent(request)) {
     ServletFileUpload upload = new ServletFileUpload(new DiskFileItemFactory())
     //upload.setSizeMax(52428800) // 50MB
-    upload.setSizeMax(5242880) // 5MB
+    upload.setSizeMax(2*5242880) // 2*5MB
 
     List<FileItem> items = null
 
