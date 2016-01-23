@@ -25,6 +25,7 @@ import ch.ehi.ili2db.base.Ili2db
 import ch.ehi.ili2db.base.Ili2dbException
 import ch.ehi.ili2db.gui.Config
 import ch.ehi.ili2db.mapping.NameMapping
+import ch.ehi.basics.logging.EhiLogger
 
 Logger logger = Logger.getLogger("action.groovy")
 logger.setUseParentHandlers(true)
@@ -98,12 +99,18 @@ if (ServletFileUpload.isMultipartContent(request)) {
             String gpkgFileName = FilenameUtils.removeExtension(targetFileName) + ".gpkg"
             gpkgFullFileName = tmpDir.toString() + File.separator + gpkgFileName
             config.setDbfile(gpkgFullFileName)
-            //config.setModels("DM01AVCH24LV95D")
             config.setDburl("jdbc:sqlite:"+config.getDbfile())
             config.setXtffile(targetFile.toString())
 
+            String fileExtension = FilenameUtils.getExtension(targetFileName)
+            System.out.println(fileExtension)
+            if (fileExtension.equalsIgnoreCase("itf")) {
+                config.setItfTranferfile(true)
+            }
+
             // Now create the GeoPackage.
             try {
+                //EhiLogger.getInstance().setTraceFilter(false)
                 Ili2db.runImport(config, "")
             } catch (Ili2dbException e) {
                 logger.severe e.getMessage()

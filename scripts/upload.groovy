@@ -8,8 +8,11 @@ html.html {
     body {
         h1 'INTERLIS (ITF/XTF) to GeoPackage Converter'
         form action: 'action.groovy', method: 'post', enctype: 'multipart/form-data', {
-            label 'Username: ', {
-                input type: 'text', name: 'username'
+            label 'Reference frame: ', {
+                select name: 'reference_frame', {
+                    option 'LV03'
+                    option 'LV95'
+                }
             }
             label "--strokeArcs", {
                 input type: 'checkbox', checked: 'checked', name: 'strokeArcs', id: 'strokeArcs'
