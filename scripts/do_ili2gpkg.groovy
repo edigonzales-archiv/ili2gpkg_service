@@ -133,7 +133,7 @@ if (ServletFileUpload.isMultipartContent(request)) {
                     response.flushBuffer()
                 }
             } catch (Exception e) {
-                logger.sever e.getMessage()
+                logger.severe e.getMessage()
             }
             finally {
                 FileUtils.deleteDirectory(tmpDir.toFile())
