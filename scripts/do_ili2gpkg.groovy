@@ -5,7 +5,7 @@
    @Grab(group='org.xerial', module='sqlite-jdbc', version='3.8.11.2'),
    @Grab('ch.interlis:ili2c:4.5.21'),
    @Grab('ch.interlis:ili2gpkg:3.0.0'),
-   @GrabConfig(systemClassLoader = true)
+   //@GrabConfig(systemClassLoader = true)
 ])
 
 import javax.servlet.http.HttpServletResponse
