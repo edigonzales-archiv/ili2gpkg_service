@@ -144,7 +144,7 @@ if (ServletFileUpload.isMultipartContent(request)) {
 
 def initConfig(params) {
     def config = new Config()
-    config.setModeldir("http://models.geo.admin.ch/;http://www.catais.org/models")
+    config.setModeldir("http://models.geo.admin.ch/;http://models.geo.gl.ch/;http://www.catais.org/models")
     config.setModels(Ili2db.XTF)
     config.setSqlNull("enable");
     config.setDefaultSrsAuthority("EPSG");
