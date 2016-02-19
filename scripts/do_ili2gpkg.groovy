@@ -27,7 +27,7 @@ import ch.ehi.ili2db.gui.Config
 import ch.ehi.ili2db.mapping.NameMapping
 import ch.ehi.basics.logging.EhiLogger
 
-Logger logger = Logger.getLogger("action.groovy")
+Logger logger = Logger.getLogger("do_ili2gpkg.groovy")
 logger.setUseParentHandlers(true)
 logger.info ("Starts at: " + new Date())
 
