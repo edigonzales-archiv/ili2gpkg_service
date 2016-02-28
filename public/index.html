@@ -32,10 +32,6 @@
 </head>
 
 <body>
-
-
-
-    <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
         <div class="container">
             <h1>ILI2GPKG</h1>
@@ -44,97 +40,88 @@
     </div>
 
     <div class="container">
-        <!-- Example row of columns -->
-
-
-
         <div class="row">
 
-
-            <form class="form-horizontal" role="form">
-
-                <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-2 control-label">Transfer File</label>
-                    <div class="col-sm-10">
-                        <input type="file" id="inputEmail3">
-                    </div>
-                </div>
-
-
-
+            <form class="form-horizontal" role="form" action='scripts/ili2gpkg.groovy' method='post' enctype='multipart/form-data'>
 
                 <div class="form-group row">
-                    <label class="col-sm-2 control-label">Reference Frame</label>
-                    <div class="col-sm-10">
-                        <label class="radio-inline">
-                            <input type="radio" name="season" id="seasonSummer" value="LV95" checked> LV95 </label>
-                        <label class="radio-inline">
-                            <input type="radio" name="season" id="seasonWinter" value="LV03"> LV03 </label>
-
+                    <label for="inputTransferFile" class="col-sm-4 control-label">Transfer File</label>
+                    <div class="col-sm-8">
+                        <input type="file" name='transferFile' id="inputTransferFile"></input>
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label class="col-sm-2 control-label">Stroke Arcs</label>
-                    <div class="col-sm-10">
+                    <label for="inputIliFile" class="col-sm-4 control-label">Model File</label>
+                    <div class="col-sm-8">
+                        <input type="file" name='iliFile' id="inputIliFile" disabled></input>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-4 control-label">Reference Frame</label>
+                    <div class="col-sm-8">
+                        <label class="radio-inline">
+                            <input type="radio" name="epsgCodeLV95" id="epsgCodeLV95" value="LV95" checked> LV95 </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="epsgCodeLV95" id="epsgCodeLV03" value="LV03"> LV03 </label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-4 control-label">Stroke Arcs</label>
+                    <div class="col-sm-8">
                         <label class="checkbox-inline">
-                            <input type="checkbox" name="season" id="seasonSummer" value="LV95" aria-label="..." checked> &nbsp; </label>
+                            <input type="checkbox" name="strokeArcs" id="strokeArcs" aria-label="..." checked> &nbsp; </input>
+                        </label>
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                    <label class="col-sm-4 control-label">Skip Polygon Building</label>
+                    <div class="col-sm-8">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="skipPolygonBuilding" id="skipPolygonBuilding" aria-label="..."> &nbsp; </label>
                     </div>
                 </div>
+
                 <div class="form-group row">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox"> Remember me
-                            </label>
-                        </div>
+                    <label class="col-sm-4 control-label">Name By Topic</label>
+                    <div class="col-sm-8">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="nameByTopic" id="nameByTopic" aria-label="..." checked> &nbsp; </label>
                     </div>
                 </div>
+
                 <div class="form-group row">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default">Upload</button>
+                    <label class="col-sm-4 control-label">No Smart Mapping</label>
+                    <div class="col-sm-8">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="noSmartMapping" id="noSmartMapping" aria-label="..."> &nbsp; </label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-4 control-label">Logfile</label>
+                    <div class="col-sm-8">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="logfile" id="logfile" aria-label="..." disabled> &nbsp; </label>
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <div class="col-sm-offset-4 col-sm-8">
+                        <button type="submit" name="submit" class="btn btn-default">Upload</button>
                     </div>
                 </div>
             </form>
 
         </div>
 
-
-        <div class="row">
-            <div class="col-md-4">
-                <h2>Heading</h2>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                    condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
-                    Donec sed odio dui. </p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        <footer class="footer">
+            <div class="container">
+                <p class="text-muted">&copy; 2016 Stefan Ziegler.</p>
             </div>
-            <div class="col-md-4">
-                <h2>Heading</h2>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                    condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
-                    Donec sed odio dui. </p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div>
-            <div class="col-md-4">
-                <h2>Heading</h2>
-                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta
-                    felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
-                    massa justo sit amet risus.</p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div>
-        </div>
-
-        <hr>
-
-        <footer>
-            <p>&copy; 2016 Stefan Ziegler.</p>
         </footer>
     </div>
     <!-- /container -->
